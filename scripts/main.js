@@ -708,6 +708,19 @@ var stocks = {
         } 
         return days;
     }
+
+    function getNewArray(obj, a, b, c) {
+        for (day in obj) {
+            delete obj[day][a];
+            delete obj[day][b];
+            delete obj[day][c];
+            obj[day][day] = day;
+        }
+        var toReturn = Object.keys(obj).map(function (key) { 
+            return obj[key]; 
+        });
+        console.log(toReturn);
+    }
    
 
     function getAverage(obj, name) {
