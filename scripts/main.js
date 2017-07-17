@@ -745,11 +745,15 @@ var stocks = {
         return result;
     }
 
-    function getValue(obj, name) {
+    function getValue(obj, name, choice) {
         var days = getArray(obj);
         console.log(days);   
         var valueArray = days.map(get(name));
         var value = valueArray.sort(compare);
         console.log(value);
-        console.log(value[0]);
+        if (choice == "high"){
+            console.log(value[0]);
+        } else {
+            console.log(value[value.length-1]);
+        }
     }
